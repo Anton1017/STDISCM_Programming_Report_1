@@ -28,9 +28,9 @@ Task 4 - Ryan
 */
 bool check_prime(const int &n);
 
-void find_primes_range(int start, int end, int limit, std::vector<int> &primes, mutex &primesMutex);
+void find_primes_range(int start, int end, int limit, std::vector<int> &primes, mutex &primes_mutex);
 
-void mutualExclusion(int currentNum, vector<int> &primes, mutex &primesMutex);
+void mutualExclusion(int current_num, vector<int> &primes, mutex &primes_mutex);
 
 int main() {
   
@@ -53,7 +53,7 @@ int main() {
   limit = stoi(input_limit);
   num_thread = stoi(input_num_thread);
 
-
+  // Start timer
   auto start_time{std::chrono::steady_clock::now()};
 
   // Get the range for each thread
@@ -65,10 +65,10 @@ int main() {
   std::thread threads[num_thread];
 
   // Create mutex for mutual exclusion
-  mutex primesMutex;
+  mutex primes_mutex;
 
   for (int i = 0; i < num_thread; i++) {
-    threads[i] = std::thread(find_primes_range, start, end, limit ,std::ref(primes), std::ref(primesMutex));
+    threads[i] = std::thread(find_primes_range, start, end, limit ,std::ref(primes), std::ref(primes_mutex));
     start = end + 1;
     end = start + range;
   }
@@ -86,28 +86,31 @@ int main() {
   }
   */
   
+  // End timer
   auto end_time{std::chrono::steady_clock::now()};
+
   std::chrono::duration<double> elapsed{end_time - start_time};
+
   cout << "Number of threads: " << num_thread << endl;
   cout << "Time: " << elapsed.count() << "s\n";
 
+  // Print primes
   cout << primes.size() << " primes were found." << std::endl;
 
   return 0;
 }
 
-void find_primes_range(int start, int end, int limit, vector<int> &primes, mutex &primesMutex) {
+void find_primes_range(int start, int end, int limit, vector<int> &primes, mutex &primes_mutex) {
   for (int current_num = start; current_num <= end && current_num <= limit; current_num++) {
     if (check_prime(current_num)) {
-      // primes.push_back(current_num);
-      mutualExclusion(current_num, primes, primesMutex);
+      mutualExclusion(current_num, primes, primes_mutex);
     }
   }
 }
 
-void mutualExclusion(int currentNum, vector<int> &primes, mutex &primesMutex) {
-  lock_guard<mutex> lock(primesMutex);
-  primes.push_back(currentNum);
+void mutualExclusion(int current_num, vector<int> &primes, mutex &primes_mutex) {
+  lock_guard<mutex> lock(primes_mutex);
+  primes.push_back(current_num);
 }
 
 bool check_prime(const int &n) {
