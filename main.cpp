@@ -68,11 +68,11 @@ int main() {
     threads[i].join();
   }
 
-  for (int current_num = 2; current_num <= limit; current_num++) {
-    if (check_prime(current_num)) {
-      primes.push_back(current_num);
-    }
-  }
+  // for (int current_num = 2; current_num <= limit; current_num++) {
+  //   if (check_prime(current_num)) {
+  //     primes.push_back(current_num);
+  //   }
+  // }
 
   auto end_time = std::chrono::system_clock::now();
   auto elapsed = end_time - start_time;
