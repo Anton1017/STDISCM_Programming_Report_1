@@ -4,6 +4,7 @@ set /A total_run=8
 
 set /A thr_init=1
 set /A pow_total=10
+set /A pow_total=pow_total + 1
 
 echo ===start=== > output.txt 
 set /A i=1
