@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <thread>
+#include <mutex>
 using namespace std;
 
 #define LIMIT 10000000
@@ -24,10 +25,14 @@ Task 4 - Ryan
 */
 bool check_prime(const int &n);
 
+void find_primes_range(int start, int end, int limit, std::vector<int> &primes, mutex &primesMutex);
+
+void mutualExclusion(int currentNum, vector<int> &primes, mutex &primesMutex);
+
 int main() {
   
   std::vector <int> primes;
-  int limit = LIMIT, num_thread = 0;
+  int limit = LIMIT, num_thread = 1;
   
   do {
     cout << "Enter upper bound of integers to check: ";
@@ -42,11 +47,15 @@ int main() {
   int range = limit / num_thread;
   int start = 2;
   int end = start + range;
+
   // Create threads
   std::thread threads[num_thread];
 
+  // Create mutex for mutual exclusion
+  mutex primesMutex;
+
   for (int i = 0; i < num_thread; ++i) {
-    threads[i] = std::thread(find_primes_range, start, end, limit ,std::ref(primes));
+    threads[i] = std::thread(find_primes_range, start, end, limit ,std::ref(primes), std::ref(primesMutex));
     start = end + 1;
     end = start + range;
   }
@@ -67,12 +76,18 @@ int main() {
   return 0;
 }
 
-void find_primes_range(int start, int end, int limit ,std::vector<int> &primes) {
+void find_primes_range(int start, int end, int limit, vector<int> &primes, mutex &primesMutex) {
   for (int current_num = start; current_num <= end && current_num <= limit; ++current_num) {
     if (check_prime(current_num)) {
-      primes.push_back(current_num);
+      // primes.push_back(current_num);
+      mutualExclusion(current_num, primes, primesMutex);
     }
   }
+}
+
+void mutualExclusion(int currentNum, vector<int> &primes, mutex &primesMutex) {
+  lock_guard<mutex> lock(primesMutex);
+  primes.push_back(currentNum);
 }
 
 bool check_prime(const int &n) {
