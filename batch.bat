@@ -6,7 +6,7 @@ set /A thr_init=1
 set /A pow_total=10
 
 echo ===start=== > output.txt 
-
+set /A i=1
 :loop1
     echo.
     echo threads equals %thr_init% >> output.txt
