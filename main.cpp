@@ -67,14 +67,14 @@ int main() {
   // Create mutex for mutual exclusion
   mutex primesMutex;
 
-  for (int i = 0; i < num_thread; ++i) {
+  for (int i = 0; i < num_thread; i++) {
     threads[i] = std::thread(find_primes_range, start, end, limit ,std::ref(primes), std::ref(primesMutex));
     start = end + 1;
     end = start + range;
   }
 
   // Join threads
-  for (int i = 0; i < num_thread; ++i) {
+  for (int i = 0; i < num_thread; i++) {
     threads[i].join();
   }
 
@@ -97,7 +97,7 @@ int main() {
 }
 
 void find_primes_range(int start, int end, int limit, vector<int> &primes, mutex &primesMutex) {
-  for (int current_num = start; current_num <= end && current_num <= limit; ++current_num) {
+  for (int current_num = start; current_num <= end && current_num <= limit; current_num++) {
     if (check_prime(current_num)) {
       // primes.push_back(current_num);
       mutualExclusion(current_num, primes, primesMutex);
