@@ -1,7 +1,10 @@
 #include <iostream>
+#include <stdlib.h>
 #include <vector>
 
-#define LIMIT 10000000
+using namespace std;
+
+// #define LIMIT 10000000
 
 /*
 This function checks if an integer n is prime.
@@ -22,9 +25,21 @@ Task 4 - Ryan
 bool check_prime(const int &n);
 
 int main() {
-  std::vector<int> primes;
-    
-  for (int current_num = 2; current_num <= LIMIT; current_num++) {
+  
+  std::vector <int> primes;
+  int limit = 0, threads = 0;
+  
+  cout << "Enter upper bound of integers to check: ";
+  cin >> limit;
+
+  cout << "Enter the number of threads to use: ";
+  cin >> threads;
+
+  
+
+
+
+  for (int current_num = 2; current_num <= limit; current_num++) {
     if (check_prime(current_num)) {
       primes.push_back(current_num);
     }
