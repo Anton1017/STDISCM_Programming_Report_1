@@ -44,7 +44,7 @@ int main() {
   cout << "Enter the number of threads to use: ";
   cin >> num_thread;
 
-  auto start_time = std::chrono::system_clock::now();
+  auto start_time{std::chrono::steady_clock::now()};
 
   // Get the range for each thread
   int range = limit / num_thread;
@@ -68,15 +68,17 @@ int main() {
     threads[i].join();
   }
 
-  // for (int current_num = 2; current_num <= limit; current_num++) {
-  //   if (check_prime(current_num)) {
-  //     primes.push_back(current_num);
-  //   }
-  // }
-
-  auto end_time = std::chrono::system_clock::now();
-  auto elapsed = end_time - start_time;
-  std::cout << "Time: " << elapsed.count() << '\n';
+  /*
+  for (int current_num = 2; current_num <= limit; current_num++) {
+    if (check_prime(current_num)) {
+      primes.push_back(current_num);
+    }
+  }
+  */
+  
+  auto end_time{std::chrono::steady_clock::now()};
+  std::chrono::duration<double> elapsed{end_time - start_time};
+  std::cout << "Time: " << elapsed.count() << "s\n";
 
   std::cout << primes.size() << " primes were found." << std::endl;
 
