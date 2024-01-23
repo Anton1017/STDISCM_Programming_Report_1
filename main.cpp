@@ -3,6 +3,7 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include <chrono>
 using namespace std;
 
 #define LIMIT 10000000
@@ -43,6 +44,8 @@ int main() {
   cout << "Enter the number of threads to use: ";
   cin >> num_thread;
 
+  auto start_time = std::chrono::system_clock::now();
+
   // Get the range for each thread
   int range = limit / num_thread;
   int start = 2;
@@ -70,6 +73,10 @@ int main() {
       primes.push_back(current_num);
     }
   }
+
+  auto end_time = std::chrono::system_clock::now();
+  auto elapsed = end_time - start_time;
+  std::cout << "Time: " << elapsed.count() << '\n';
 
   std::cout << primes.size() << " primes were found." << std::endl;
 
