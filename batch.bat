@@ -3,7 +3,7 @@ set /A init_run=3
 set /A total_run=8
 
 set /A thr_init=1
-set /A pow_init=1
+set /A pow_total=10
 
 echo ===start=== > output.txt 
 
@@ -26,5 +26,5 @@ echo ===start=== > output.txt
 
     set /A i=i+1
     set /A thr_init=thr_init*2
-if "%i%" LEQ "%pow_init%" goto loop1
+if "%i%" LSS "%pow_total%" goto loop1
 echo ===end=== >> output.txt
