@@ -4,6 +4,8 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <string>
+
 using namespace std;
 
 #define LIMIT 10000000
@@ -33,16 +35,24 @@ void mutualExclusion(int currentNum, vector<int> &primes, mutex &primesMutex);
 int main() {
   
   std::vector <int> primes;
+  string input_limit, input_num_thread;
   int limit = LIMIT, num_thread = 1;
   
-  do {
-    cout << "Enter upper bound of integers to check: ";
-    cin >> limit;
-  } while (limit > LIMIT);
+  // do {
+  //   cout << "Enter upper bound of integers to check: ";
+  //   cin >> limit;
+  // } while (limit > LIMIT);
   
 
-  cout << "Enter the number of threads to use: ";
-  cin >> num_thread;
+  // cout << "Enter the number of threads to use: ";
+  // cin >> num_thread;
+
+  // Automate input for testing
+  getline(cin, input_limit);
+  getline(cin, input_num_thread);
+  limit = stoi(input_limit);
+  num_thread = stoi(input_num_thread);
+
 
   auto start_time{std::chrono::steady_clock::now()};
 
@@ -78,9 +88,10 @@ int main() {
   
   auto end_time{std::chrono::steady_clock::now()};
   std::chrono::duration<double> elapsed{end_time - start_time};
-  std::cout << "Time: " << elapsed.count() << "s\n";
+  cout << "Number of threads: " << num_thread << endl;
+  cout << "Time: " << elapsed.count() << "s\n";
 
-  std::cout << primes.size() << " primes were found." << std::endl;
+  cout << primes.size() << " primes were found." << std::endl;
 
   return 0;
 }
