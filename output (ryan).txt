@@ -1,0 +1,123 @@
+===start===  
+threads equals 1 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 8.96749s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 8.96693s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 8.96865s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 8.96374s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 8.94526s
+664579 primes were found.
+threads equals 2 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 5.63218s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 5.68031s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 5.64141s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 5.70217s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 5.63064s
+664579 primes were found.
+threads equals 4 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 3.17357s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 3.09754s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 3.06943s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 3.05691s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 3.26255s
+664579 primes were found.
+threads equals 8 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.84708s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.97005s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.8103s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.82309s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.85162s
+664579 primes were found.
+threads equals 16 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.60331s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.6032s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.59543s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.62035s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.62724s
+664579 primes were found.
+threads equals 32 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.58507s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.56028s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.61621s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.57273s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.58514s
+664579 primes were found.
+threads equals 64 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.57078s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.62358s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.65758s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.62772s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.57086s
+664579 primes were found.
+threads equals 128 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.50578s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.52706s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.52226s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.5313s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.57604s
+664579 primes were found.
+threads equals 256 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.54112s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.53164s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.54977s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.54462s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.51117s
+664579 primes were found.
+threads equals 512 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.56759s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.53928s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.62152s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.65955s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.51612s
+664579 primes were found.
+threads equals 1024 
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.54917s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.69419s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.56901s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.52744s
+664579 primes were found.
+Enter upper bound of integers to check: Enter the number of threads to use: Time: 1.54824s
+664579 primes were found.
+===end=== 
